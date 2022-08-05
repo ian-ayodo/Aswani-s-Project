@@ -294,7 +294,8 @@
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-	        <button type="submit" form="additemform" class="btn btn-success" name="addItem">Add</button>
+	        <button type="submit" form="additemform" class="btn btn-success">Add</button>
+	        <!-- <button type="submit" form="additemform" class="btn btn-success" name="addItem">Add</button> -->
 	      </div>
 	    </div>
 	  </div>

@@ -1,11 +1,11 @@
 <?php 
   include("../functions.php");
 
-  if((!isset($_SESSION['uid']) && !isset($_SESSION['username']) && isset($_SESSION['user_level'])) ) 
-    header("Location: login.php");
+  // if((!isset($_SESSION['uid']) && !isset($_SESSION['username']) && isset($_SESSION['user_level'])) ) 
+  //   header("Location: login.php");
 
-  if($_SESSION['user_level'] != "staff")
-    header("Location: login.php");
+  // if($_SESSION['user_level'] != "staff")
+  //   header("Location: login.php");
 
   /*
   echo $_SESSION['uid'];
@@ -163,11 +163,11 @@
                   Status</div>
                 <div class="card-body">
                   Hello , <b><?php echo $_SESSION['username'] ?></b><hr>
-                  Role : <b><?php echo ucfirst($_SESSION['user_role']) ?></b><hr>
+                  </b><hr>
                   <form action="statuschange.php" method="POST">
-                    <input type="hidden" id="staffid" name="staffid" value=" <?php echo $_SESSION['uid']; ?>" />
+                    <!-- <input type="hidden" id="staffid" name="staffid" value=" <?php echo $_SESSION['uid']; ?>" />
                       <?php if (getStatus()=='Online') echo "<input type='submit' class='btn btn-success myBtn' name='btnStatus' value='Online'>"; else echo"<input type='submit' class='btn btn-danger myBtn' name='btnStatus' value='Offline'>" ?>
-                  </form>
+                  </form> -->
                 </div>
               </div>
             </div>

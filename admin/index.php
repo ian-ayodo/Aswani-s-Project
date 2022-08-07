@@ -11,8 +11,7 @@
   //echo $_SESSION['username'];
   //echo $_SESSION['user_level'];
 
-  $query = "select * from orders";
-  $result = mysql_query($query);
+
 
 ?>
 
@@ -129,13 +128,32 @@
                 <div class="card-body">
                   <table id="tblCurrentOrder" table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
-                      <th>Order #</th>
-                      <th>Menu</th>
-                      <th>Item Name</th>
-                      <th class='text-center'>Quantity</th>
-                      <th class='text-center'>Status</th>
+                      <th scope = "col">Order #</th>
+                      <th scope = "col">Menu</th>
+                      <th scope = "col">Item Name</th>
+                      <th scope = "col" class='text-center'>Quantity</th>
+                      <th scope = "col" class='text-center'>Status</th>
                     </thead>
-
+                    <tbody>
+                        <?php include 'fetch_orders.php'; ?>
+                          <?php if ($result->num_rows > 0): ?>
+                          <?php while($array=mysqli_fetch_row($result)): ?>
+                          <tr>
+                              <th scope="row"><?php echo $array[0];?></th>
+                              <td><?php echo $array[1];?></td>
+                              <td><?php echo $array[2];?></td>
+                              <td><?php echo $array[3];?></td>
+                              <td><?php echo $array[4];?></td>
+                             
+                              
+                          </tr>
+                          <?php endwhile; ?>
+                          <?php else: ?>
+                          <tr>
+                            <td colspan="3" rowspan="1" headers="">No Data Found</td>
+                          </tr>
+                    <?php endif; ?>
+                    <?php mysqli_free_result($result); ?>
                     </tbody>
                   </table>
                 </div>

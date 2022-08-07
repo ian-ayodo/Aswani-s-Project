@@ -11,6 +11,9 @@
   //echo $_SESSION['username'];
   //echo $_SESSION['user_level'];
 
+  $query = "select * from orders";
+  $result = mysql_query($query);
+
 ?>
 
 <!DOCTYPE html>
@@ -132,9 +135,7 @@
                       <th class='text-center'>Quantity</th>
                       <th class='text-center'>Status</th>
                     </thead>
-                    
-                    <tbody id="tblBodyCurrentOrder">
-                      
+
                     </tbody>
                   </table>
                 </div>
